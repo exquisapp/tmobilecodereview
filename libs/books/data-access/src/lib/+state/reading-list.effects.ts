@@ -56,7 +56,7 @@ export class ReadingListEffects implements OnInitEffects {
       ofType(ReadingListActions.removeFromReadingList),
       optimisticUpdate({
         run: ({ item }) => {
-          return this.http.delete(`/api/reading-list/${item.bookId}`).pipe(
+          return this.http.delete(`/api/reading-list/${item.id}`).pipe(
             map(() =>
               ReadingListActions.confirmedRemoveFromReadingList({
                 item

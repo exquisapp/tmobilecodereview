@@ -25,12 +25,12 @@ export const getReadingListEntities = createSelector(
   selectEntities
 );
 
-export interface ReadingListBook extends Book, Omit<ReadingListItem, 'bookId'> {
+export interface ReadingListBook extends Book/* , Omit<ReadingListItem, 'bookId'> */ {
   isAdded: boolean;
 }
 
 export const getAllBooks = createSelector<
-  BooksPartialState | ReadingListPartialState,
+  BooksPartialState & ReadingListPartialState,
   Book[],
   Record<string, ReadingListItem>,
   ReadingListBook[]
