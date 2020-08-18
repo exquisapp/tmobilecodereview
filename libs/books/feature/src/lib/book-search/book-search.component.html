@@ -14,6 +14,7 @@
 </form>
 
 <ng-container *ngIf="searchTerm; else empty">
+  <h2>Showing {{books.length}} results:</h2><!--make this show only when results show-->
   <div class="book-grid">
     <div class="book" data-testing="book-item" *ngFor="let b of books">
       <div class="book--title">
@@ -32,10 +33,12 @@
           <p [innerHTML]="b.description"></p>
           <div>
             <button
-              mat-flat-button
-              color="primary"
+              class="want-to-read-button"
+              mat-raised-button
               (click)="addBookToReadingList(b)"
               [disabled]="b.isAdded"
+              [matTooltip]="'Click button to add (' + b.title + ') to your \'Want to Read\' list'"
+              aria-label="'Want to Read' button"
             >
               Want to Read
             </button>
