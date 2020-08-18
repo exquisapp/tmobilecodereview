@@ -1,6 +1,6 @@
 module.exports = {
   name: 'books-data-access',
-  preset: './jest.config.js',
+  preset: '../../../jest.config.js',
   coverageDirectory: '.',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',

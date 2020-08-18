@@ -1,6 +1,6 @@
 module.exports = {
   name: 'okreads-browser',
-  preset: './jest-config',
+  preset: '../../../jest.config.js',
   coverageDirectory: '.',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',

@@ -14,7 +14,7 @@ export class BooksController {
   @Get('/books/search')
   async searchBooks(@Query('q') term) {
     try {
-      return this.books.search(term);
+      return await this.books.search(term);
     } catch (e) {
       throw new HttpException(e.message, HttpStatus.UNPROCESSABLE_ENTITY);
     }
