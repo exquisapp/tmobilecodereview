@@ -6,6 +6,7 @@
   "linterOptions": {
     "exclude": ["**/*"]
   },
+  "extends": ["tslint:recommended", "tslint-sonarts"],
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
