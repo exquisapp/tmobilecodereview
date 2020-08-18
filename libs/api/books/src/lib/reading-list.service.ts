@@ -28,4 +28,20 @@ export class ReadingListService {
       return list.filter(x => x.bookId !== id);
     });
   }
+
+  async markFinishedBook(id: string): Promise<void> {
+    this.storage.update(list => {
+      list.find(b => b.bookId === id).finishedDate = new Date().toISOString();
+      list.find(b => b.bookId === id).finished = true;
+      return list
+    });
+  }
+
+  async unmarkFinishedBook(id: string): Promise<void> {
+    this.storage.update(list => {
+      list.find(b => b.bookId === id).finishedDate = '';
+      list.find(b => b.bookId === id).finished = false;
+      return list
+    });
+  }
 }

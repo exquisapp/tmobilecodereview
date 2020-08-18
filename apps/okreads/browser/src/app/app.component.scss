@@ -65,7 +65,3 @@ main {
 .reading-list-content {
   padding: $spacing-xxs;
 }
-
-button[data-testing="toggle-reading-list"]:focus {
-  border: 2px solid #000000;
-}

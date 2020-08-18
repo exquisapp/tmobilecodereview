@@ -30,7 +30,7 @@ export interface ReadingListBook extends Book, Omit<ReadingListItem, 'bookId'> {
 }
 
 export const getAllBooks = createSelector<
-  BooksPartialState | ReadingListPartialState,
+  BooksPartialState & ReadingListPartialState,
   Book[],
   Record<string, ReadingListItem>,
   ReadingListBook[]
